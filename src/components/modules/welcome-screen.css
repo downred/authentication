@@ -1,0 +1,34 @@
+h1 {
+    font-size: 5rem !important;
+}
+
+/* MEDIA QUERIES*/
+
+@media screen and (max-width:1000px) {
+
+
+    h1 {
+        font-size: 4rem !important;
+    }
+
+}
+
+
+@media screen and (max-width:1000px) {
+
+
+    h1 {
+        font-size: 3rem !important;
+    }
+
+}
+
+
+@media screen and (max-width:570px) {
+
+
+    h1 {
+        font-size: 2rem !important;
+    }
+
+}
