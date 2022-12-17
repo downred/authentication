@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import { BiArrowBack } from "react-icons/bi";
+import "./modules/login.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -17,27 +19,29 @@ const SignUp = () => {
     if (password != passwordConf) {
       const newError = "Passwords do not match!";
       setError(newError);
-      // console.log(newError);
     } else {
       setError("");
       await createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          // console.log(user);
+        .then(() => {
+          signOut(auth);
           navigate("/log-in");
         })
         .catch((error) => {
-          const errorCode = error.code;
+          const { code } = error;
+
           var errorMsg;
-          switch (errorCode) {
+          switch (code) {
             case "auth/weak-password":
               errorMsg = "Password should be at least 6 characters!";
               return setError(errorMsg);
             case "auth/invalid-email":
               errorMsg = "Please provide a valid email";
               return setError(errorMsg);
+            case "auth/email-already-in-use":
+              errorMsg =
+                "This email is already in use. Please use a different email.";
+              return setError(errorMsg);
           }
-          // console.log(errorCode, errorMsg);
         });
     }
   };
@@ -45,6 +49,9 @@ const SignUp = () => {
   return (
     <Card style={{ width: "20rem" }}>
       <Card.Header>
+      <button className="back-button" onClick={() => navigate("/")}>
+        <BiArrowBack />
+      </button>
         <Card.Title className="text-center">Sign up</Card.Title>
       </Card.Header>
       <Card.Body>
