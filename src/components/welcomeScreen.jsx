@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const WelcomeScreen = () => {
   const navigate = useNavigate();
@@ -22,7 +23,8 @@ const WelcomeScreen = () => {
   }, []);
 
   return (
-    <div>
+    <motion.div
+    >
       {!isLoggedIn && (
         <Container className="d-flex flex-column">
           <h1>Welcome to our website</h1>
@@ -36,7 +38,7 @@ const WelcomeScreen = () => {
           </div>
         </Container>
       )}
-    </div>
+    </motion.div>
   );
 };
 

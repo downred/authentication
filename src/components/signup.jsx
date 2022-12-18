@@ -5,6 +5,7 @@ import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { BiArrowBack } from "react-icons/bi";
+import { motion } from "framer-motion";
 import "./modules/login.css";
 
 const SignUp = () => {
@@ -47,52 +48,58 @@ const SignUp = () => {
   };
 
   return (
-    <Card style={{ width: "20rem" }}>
-      <Card.Header>
-      <button className="back-button" onClick={() => navigate("/")}>
-        <BiArrowBack />
-      </button>
-        <Card.Title className="text-center">Sign up</Card.Title>
-      </Card.Header>
-      <Card.Body>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Form>
-          <Form.Group controlId="email" className="mb-3">
-            <Form.Label>E-mail address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter your e-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="pword" className="mb-3">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="pwordConf" className="mb-3">
-            <Form.Label>Confirm your password</Form.Label>
-            <Form.Control
-              type="password"
-              value={passwordConf}
-              onChange={(e) => setPasswordConf(e.target.value)}
-            />
-          </Form.Group>
-          <Button
-            type="submit"
-            variant="primary"
-            className="w-100"
-            onClick={handleSubmit}
-          >
-            Create account
-          </Button>
-        </Form>
-      </Card.Body>
-    </Card>
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 0 }}
+    >
+      <Card style={{ width: "20rem" }}>
+        <Card.Header>
+          <button className="back-button" onClick={() => navigate("/")}>
+            <BiArrowBack />
+          </button>
+          <Card.Title className="text-center">Sign up</Card.Title>
+        </Card.Header>
+        <Card.Body>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form>
+            <Form.Group controlId="email" className="mb-3">
+              <Form.Label>E-mail address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter your e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="pword" className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="pwordConf" className="mb-3">
+              <Form.Label>Confirm your password</Form.Label>
+              <Form.Control
+                type="password"
+                value={passwordConf}
+                onChange={(e) => setPasswordConf(e.target.value)}
+              />
+            </Form.Group>
+            <Button
+              type="submit"
+              variant="primary"
+              className="w-100"
+              onClick={handleSubmit}
+            >
+              Create account
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </motion.div>
   );
 };
 
