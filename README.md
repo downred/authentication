@@ -1,4 +1,4 @@
-#Authentication
+# Authentication
 
 This is an authentication page built with ReactJS, using Firebase as a backend and Bootstrap for styling.
 Getting Started
@@ -10,13 +10,13 @@ To get started with this project, follow these steps:
     Install dependencies: npm install
     Start the development server: npm start
 
-##Features
+## Features
 
     User registration and login
     Password reset functionality
     Bootstrap styling for a clean and modern look
 
-##Dependencies
+## Dependencies
 
 This project uses the following dependencies:
 
@@ -24,7 +24,7 @@ This project uses the following dependencies:
     Firebase
     Bootstrap
 
-##Contributing
+## Contributing
 
 If you'd like to contribute to this project, please follow these steps:
 
@@ -33,6 +33,6 @@ If you'd like to contribute to this project, please follow these steps:
     Make your changes and commit them to your branch
     Submit a pull request from your branch to this repository
 
-##License
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for more information.
