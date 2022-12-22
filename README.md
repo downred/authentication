@@ -1,7 +1,8 @@
 # Authentication
 
 This is an authentication page built with ReactJS, using Firebase as a backend and Bootstrap for styling.
-Getting Started
+
+## Getting Started
 
 To get started with this project, follow these steps:
 
