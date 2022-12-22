@@ -5,33 +5,33 @@ Getting Started
 
 To get started with this project, follow these steps:
 
-    Clone the repository: git clone https://github.com/downred/authentication.git
-    Navigate to the directory: cd authentication
-    Install dependencies: npm install
-    Start the development server: npm start
+1. Clone the repository: git clone https://github.com/downred/authentication.git
+2. Navigate to the directory: cd authentication
+3. Install dependencies: npm install
+4. Start the development server: npm start
 
 ## Features
 
-    User registration and login
-    Password reset functionality
-    Bootstrap styling for a clean and modern look
+1. User registration and login
+2. Password reset functionality
+3. Bootstrap styling for a clean and modern look
 
 ## Dependencies
 
 This project uses the following dependencies:
 
-    ReactJS
-    Firebase
-    Bootstrap
+1. ReactJS
+2. Firebase
+3. Bootstrap
 
 ## Contributing
 
 If you'd like to contribute to this project, please follow these steps:
 
-    Fork the repository
-    Create a new branch for your contribution
-    Make your changes and commit them to your branch
-    Submit a pull request from your branch to this repository
+1. Fork the repository
+2. Create a new branch for your contribution
+3. Make your changes and commit them to your branch
+4. Submit a pull request from your branch to this repository
 
 ## License
 
