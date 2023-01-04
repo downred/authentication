@@ -14,8 +14,7 @@ To get started with this project, follow these steps:
 ## Features
 
 1. User registration and login
-2. Password reset functionality
-3. Bootstrap styling for a clean and modern look
+2. Bootstrap styling for a clean and modern look
 
 ## Dependencies
 
